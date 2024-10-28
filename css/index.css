@@ -1,18 +1,15 @@
-/* Reset some default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styling */
 body {
   font-family: Arial, sans-serif;
   color: #333;
   background-color: #f4f4f9;
 }
 
-/* Header and Navbar */
 header {
   background-color: #333;
   color: #fff;
@@ -46,7 +43,50 @@ header {
   color: #ffd700;
 }
 
-/* Main content */
+.burger {
+  display: none !important;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.menu-panel {
+  background-color: #333;
+  color: white;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  transition: right 0.4s ease;
+}
+
+.menu-panel ul {
+  list-style: none;
+  padding: 50px 20px;
+}
+
+.menu-panel ul li {
+  margin-bottom: 20px;
+}
+
+.menu-panel ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.close-btn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
 .content-section {
   display: flex;
   align-items: center;
@@ -84,7 +124,6 @@ header {
   border-radius: 8px;
 }
 
-/* Button styling */
 .button {
   display: inline-block;
   padding: 0.5em 1.5em;
@@ -98,10 +137,70 @@ header {
   background-color: #ffd700;
 }
 
-/* Footer styling */
 footer {
   text-align: center;
   padding: 1em;
   background-color: #333;
   color: #fff;
+}
+
+@media (max-width: 320px) {
+  .content-section {
+    flex-direction: column;
+    padding: 1em;
+  }
+  .text-content h2 {
+    font-size: 1.4em;
+  }
+}
+
+@media (max-width: 375px) {
+  .content-section {
+    flex-direction: column;
+    padding: 1.5em;
+  }
+  .text-content h2 {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 425px) {
+  .content-section {
+    flex-direction: column;
+    padding: 1.5em;
+  }
+  .text-content h2 {
+    font-size: 1.6em;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+  }
+  .burger {
+    display: block !important;
+  }
+  .menu-panel.active {
+    right: 0;
+  }
+  .content-section {
+    flex-direction: column;
+    padding: 2em;
+  }
+  .text-content h2 {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 1024px) {
+  .content-section {
+    padding: 2em;
+  }
+}
+
+@media (max-width: 1440px) {
+  .content-section {
+    max-width: 1200px;
+  }
 }
